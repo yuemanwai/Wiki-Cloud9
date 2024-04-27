@@ -4,7 +4,7 @@ services:
   app:
     image: yuemanwai/wikipedia
     deploy:
-      replicas: 1
+      replicas: 2
       restart_policy:
         condition: on-failure
         delay: 5s
@@ -12,7 +12,7 @@ services:
       SECRET_KEY: you-will-never-guess
       DATABASE_URL: postgresql://postgres:postgres@postgresdb:5432/postgres
     networks:
-      - flask_app
+      - flaskapp
     ports:
       - 5000:5000
       
@@ -29,7 +29,7 @@ services:
     ports:
       - "5432:5432"
     networks:
-      - flask_app
+      - flaskapp
     restart: unless-stopped
 
   pgadmin:
@@ -46,7 +46,7 @@ services:
     ports:
       - "80:80"
     networks:
-      - flask_app
+      - flaskapp
     restart: unless-stopped
 
   mailhog:
@@ -57,11 +57,11 @@ services:
       - 1025:1025 # smtp server
       - 8025:8025 # web ui
     networks:
-      - flask_app
+      - flaskapp
 
 networks:
-  flask_app:
-    driver: bridge
+  flaskapp:
+    external: true
 
 volumes:
   postgres:
