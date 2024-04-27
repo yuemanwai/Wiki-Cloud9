@@ -11,7 +11,7 @@ docker-compose --version
 搞port setting：
 sudo chmod 755 setup.sh
 ./setup.sh
-sudo chmod 755 get_preview.sh
+sudo chmod 755 get_preview_link.sh
 ./get_preview_link.sh
 
 
