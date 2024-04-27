@@ -14,10 +14,11 @@
 
 ## Configure settings
 - sudo chmod 755 setup.sh
-- ./setup.sh
 - sudo chmod 755 get_preview_link.sh
+- sudo chmod 777 docker-compose.yml
+- ./setup.sh
 - ./get_preview_link.sh
-- sudo chmod 757 docker-compose.yml
+
 
 ## Use swarm mode
 - sudo docker swarm init
