@@ -1,3 +1,5 @@
+以下按順序做, 如果有已經有docker, 可以唔裝
+
 cloud9 上安裝docker：
 sudo yum install -y docker
 sudo service docker start
@@ -18,7 +20,7 @@ sudo chmod 755 get_preview_link.sh
 Run docker-compose：
 sudo docker-compose up -d
 
-停 docker-compose：
+結束 docker-compose：
 sudo docker-compose down
 
 
