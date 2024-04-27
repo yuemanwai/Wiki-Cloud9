@@ -1,18 +1,19 @@
+# Remove .git：
 cd Wiki-Cloud9
 sudo rm -rf .git
 
 
-cloud9 上安裝docker：
+# Install Docker on Cloud9
 sudo yum install -y docker
 sudo service docker start
 docker --version
 
-cloud9 上安裝docker-compose：
+# Install Docker Compose on Cloud9
 sudo curl -L "https://github.com/docker/compose/releases/latest/download/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
 sudo chmod +x /usr/local/bin/docker-compose
 docker-compose --version
 
-搞setting：
+# Configure settings
 sudo chmod 755 setup.sh
 ./setup.sh
 sudo chmod 755 get_preview_link.sh
@@ -20,23 +21,22 @@ sudo chmod 755 get_preview_link.sh
 sudo chmod 757 docker-compose.yml
 
 
-用swarm mode：
+# Use swarm mode
 sudo docker swarm init
 sudo docker network create --driver overlay flaskapp
 sudo docker stack deploy -c docker-compose.yml wikistack
 
-檢查：
+# Check status
 sudo docker stack ps wikistack
 sudo docker ps
 
-跟住改replicas : 2 然後行多次下面command：
+# To scale up, change "replicas: 1" to "replicas: 2" and run the following command multiple times:
 sudo docker stack deploy -c docker-compose.yml wikistack
 
-離開swarm mode：
+# To leave swarm mode:
 sudo docker swarm leave --force
 
 
-
-出錯時用，檢查port 5000：
+# If there are errors:
 sudo lsof -i :5000
 sudo docker ps
