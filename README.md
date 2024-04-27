@@ -29,7 +29,7 @@
 - sudo docker stack ps wikistack
 - sudo docker ps
 
-## To scale up, change "replicas: 1" to "replicas: 2" and run the following command multiple times:
+## To scale up, change "replicas: 1" to "replicas: 2" and run the following command again:
 - sudo docker stack deploy -c docker-compose.yml wikistack
 
 ## To leave swarm mode:
