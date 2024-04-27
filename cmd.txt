@@ -1,3 +1,7 @@
+cd Wiki-Cloud9
+sudo rm -rf .git
+
+
 cloud9 上安裝docker：
 sudo yum install -y docker
 sudo service docker start
