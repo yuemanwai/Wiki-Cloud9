@@ -25,6 +25,16 @@ sudo docker-compose down
 由於一開始默認replicas係1, 要改權限先, 再改replicas: 2
 sudo chmod o+rwx docker-compose.yml   
 
+用swarm mode：
+sudo docker swarm init
+sudo docker network create --driver overlay flaskapp
+sudo docker stack deploy -c docker-compose.yml wikistack
+sudo docker stack ls
+sudo docker stack ps wikistack
+sudo docker ps
+sudo docker swarm leave --force
+
+
 
 
 檢查port 5000：
