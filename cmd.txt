@@ -20,14 +20,16 @@ sudo chmod 757 docker-compose.yml
 sudo docker swarm init
 sudo docker network create --driver overlay flaskapp
 sudo docker stack deploy -c docker-compose.yml wikistack
+
+檢查：
 sudo docker stack ps wikistack
 sudo docker ps
-sudo docker swarm leave --force
 
 跟住改replicas : 2 然後行多次下面command：
 sudo docker stack deploy -c docker-compose.yml wikistack
 
-
+離開swarm mode：
+sudo docker swarm leave --force
 
 
 
