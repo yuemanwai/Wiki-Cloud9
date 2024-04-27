@@ -9,10 +9,11 @@ sudo chmod +x /usr/local/bin/docker-compose
 docker-compose --version
 
 搞port setting：
-./setup.sh
 chmod 755 setup.sh
-./get_preview_link.sh
+./setup.sh
 chmod 755 get_preview.sh
+./get_preview_link.sh
+
 
 Run docker-compose：
 sudo docker login
