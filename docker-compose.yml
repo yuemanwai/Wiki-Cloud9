@@ -4,7 +4,7 @@ services:
   app:
     image: yuemanwai/wikipedia
     deploy:
-      replicas: 2
+      replicas: 1
       restart_policy:
         condition: on-failure
         delay: 5s
