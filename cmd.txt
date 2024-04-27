@@ -1,5 +1,3 @@
-以下按順序做, 如果已經有docker, 可以唔裝
-
 cloud9 上安裝docker：
 sudo yum install -y docker
 sudo service docker start
@@ -10,34 +8,29 @@ sudo curl -L "https://github.com/docker/compose/releases/latest/download/docker-
 sudo chmod +x /usr/local/bin/docker-compose
 docker-compose --version
 
-搞port setting：
+搞setting：
 sudo chmod 755 setup.sh
 ./setup.sh
 sudo chmod 755 get_preview_link.sh
 ./get_preview_link.sh
+sudo chmod 757 docker-compose.yml
 
-Run docker-compose：
-sudo docker-compose up -d
-
-結束 docker-compose：
-sudo docker-compose down
-
-由於一開始默認replicas係1, 要改權限先, 再改replicas: 2
-sudo chmod o+rwx docker-compose.yml   
 
 用swarm mode：
 sudo docker swarm init
 sudo docker network create --driver overlay flaskapp
 sudo docker stack deploy -c docker-compose.yml wikistack
-sudo docker stack ls
 sudo docker stack ps wikistack
 sudo docker ps
 sudo docker swarm leave --force
 
+跟住改replicas : 2 然後行多次下面command：
+sudo docker stack deploy -c docker-compose.yml wikistack
 
 
 
-檢查port 5000：
+
+
+出錯時用，檢查port 5000：
 sudo lsof -i :5000
 sudo docker ps
-
