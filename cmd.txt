@@ -16,7 +16,6 @@ sudo chmod 755 setup.sh
 sudo chmod 755 get_preview_link.sh
 ./get_preview_link.sh
 
-
 Run docker-compose：
 sudo docker-compose up -d
 
