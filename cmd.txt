@@ -39,6 +39,7 @@ sudo docker stack deploy -c docker-compose.yml wikistack
 
 
 # To leave swarm mode:
+sudo docker stack rm wikistack
 sudo docker swarm leave --force
 
 
