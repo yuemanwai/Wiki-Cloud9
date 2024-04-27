@@ -1,4 +1,4 @@
-以下按順序做, 如果有已經有docker, 可以唔裝
+以下按順序做, 如果已經有docker, 可以唔裝
 
 cloud9 上安裝docker：
 sudo yum install -y docker
