@@ -47,3 +47,4 @@ sudo docker swarm leave --force
 # If there are errors:
 sudo lsof -i :5000
 sudo docker ps
+sudo docker exec -it <container_id_or_name> /bin/sh
