@@ -10,7 +10,7 @@ services:
         delay: 5s
     environment:
       SECRET_KEY: you-will-never-guess
-      DATABASE_URL: postgresql://postgres:postgres@postgresdb:5432/postgres
+      SQLALCHEMY_DATABASE_URL: postgresql://postgres:postgres@postgresdb:5432/postgres
     networks:
       - flaskapp
     ports:
